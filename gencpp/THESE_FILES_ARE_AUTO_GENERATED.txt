@@ -1,0 +1,2 @@
+NOTE: These files are auto-generated using antlr - do not edit them.
+See the ../antlr_gen_cpp.sh script
