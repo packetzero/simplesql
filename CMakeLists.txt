@@ -21,4 +21,4 @@ if($ENV{MAKE_TESTS})
   add_subdirectory(tests)
 endif()
 
-install(DIRECTORY include DESTINATION include FILES_MATCHING PATTERN "*.h" )
+install(DIRECTORY include DESTINATION . FILES_MATCHING PATTERN "*.h" )
