@@ -87,3 +87,18 @@ DynVal DynMapValueStore::lookupValue(std::string name, std::vector<std::string> 
   }
   return DynVal();
 }
+
+namespace simplesql {
+  DynVal eval(SPCtxNode exprTree, RuntimeState &state) {
+
+    if (exprTree) {
+      SqlTreeExprEval evaluator(state);
+      DynVal result = evaluator.visit(exprTree, 0);
+      if (result.valid()) {
+        return result;
+      }
+      // assume STDERR already has details about error
+    }
+    return 0;
+  }  
+}

@@ -9,18 +9,6 @@ class SqlExecTest : public ::testing::Test {
 protected:
   virtual void SetUp() {  }
 
-  static DynVal eval(SPCtxNode exprTree, RuntimeState &state) {
-
-    if (exprTree) {
-      SqlTreeExprEval evaluator(state);
-      DynVal result = evaluator.visit(exprTree, 0);
-      if (result.valid()) {
-        return result;
-      }
-      // assume STDERR already has details about error
-    }
-    return 0;
-  }
 
   int exec_sql(std::string sql_expr)
   {
@@ -36,7 +24,7 @@ protected:
 
     RuntimeState state = RuntimeState(_valueStore);
 
-    int result = eval(expr, state);
+    int result = simplesql::eval(expr, state);
     if (state.hasErrors()) {
       _hasExecError = true;
       fprintf(stderr, "Exec error:%s\n", state._errors[0].c_str());

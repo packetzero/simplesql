@@ -143,7 +143,9 @@ private:
   SqlExprValueStore *_pConstants;
 };
 
-
+namespace simplesql {
+  DynVal eval(SPCtxNode exprTree, RuntimeState &state);
+}
 
 /**
  * Simplest implementation of a value store tied to string map.

@@ -9,3 +9,5 @@ file(GLOB SRCS "../gencpp/*.cpp" "*.cpp" )
 include_directories(../gencpp ../deps/dyno/include )
 
 add_library (${PROJECT_NAME} ${SRCS} ${HDRS})
+
+install(TARGETS simplesql ARCHIVE DESTINATION lib)

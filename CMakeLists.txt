@@ -20,3 +20,5 @@ if($ENV{MAKE_TESTS})
   set(GTEST_DIR $ENV{GTEST_DIR})
   add_subdirectory(tests)
 endif()
+
+install(DIRECTORY include DESTINATION include FILES_MATCHING PATTERN "*.h" )
