@@ -1,6 +1,6 @@
 #pragma once
 
-#include "_sqlexpr_private.h"
+#include "../include/simplesql.h"
 
 /*
 abs(X)

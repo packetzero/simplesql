@@ -8,8 +8,7 @@ using namespace antlr4;
 // uncomment this to enable asserts in Debug build
 //#define WITH_ASSERTS
 
-#include "_sqlexpr_private.h"
-#include "exec_tree.hpp"
+#include "../include/simplesql_tree.h"
 
 /*
  * Implementation of the ANTLR4 Visitor.

@@ -183,4 +183,12 @@ private:
   DynMap *_pObj;
 };
 
+#define WITH_ASSERTS
+#ifdef WITH_ASSERTS
+#include <assert.h>
+#define ASSERT(a) assert(a)
+#else
+#define ASSERT(a)
+#endif
+
 #endif // _SIMPLESQL_H_

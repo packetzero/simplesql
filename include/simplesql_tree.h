@@ -8,7 +8,7 @@
  * into our simplified CtxNode tree.
  */
 
-#include "_sqlexpr_private.h"
+#include "simplesql.h"
 
 enum OP {
   OP_NONE,

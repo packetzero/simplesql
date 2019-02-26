@@ -1,4 +1,3 @@
-#include "_sqlexpr_private.h"
 #include "sqlite_functions.h"
 
 /*

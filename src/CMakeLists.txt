@@ -6,7 +6,7 @@ PROJECT(${PROJECT_NAME})
 file(GLOB HDRS "../gencpp/*.h*" "*.h*")
 file(GLOB SRCS "../gencpp/*.cpp" "*.cpp" )
 
-include_directories(../gencpp ../deps/dyno/include )
+include_directories(../gencpp  )
 
 add_library (${PROJECT_NAME} ${SRCS} ${HDRS})
 

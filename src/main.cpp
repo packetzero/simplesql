@@ -7,7 +7,7 @@
 
 using namespace antlr4;
 
-#include "_sqlexpr_private.h"
+#include "../include/simplesql.h"
 #include "_sqlexpr_eval.hpp"
 #include "sqlite_functions.h"
 

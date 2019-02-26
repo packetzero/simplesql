@@ -13,7 +13,7 @@ protected:
   virtual void SetUp() {  }
 };
 
-#include "../src/exec_tree.hpp"
+#include "../include/simplesql_tree.h"
 #include "../src/_sqlexpr_eval.hpp"
 
 TEST_F(MiscExprTest, like_split) {

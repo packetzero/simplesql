@@ -13,6 +13,7 @@ set(CMAKE_CXX_RELEASE_FLAGS "-DNDEBUG=1")
 # on MacOS with brew:
 include_directories(/usr/local/include/antlr4-runtime )
 include_directories(/usr/local/include)
+include_directories(${CMAKE_SOURCE_DIR}/deps/dyno/include)
 
 add_subdirectory(src)
 
