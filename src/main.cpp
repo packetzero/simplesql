@@ -22,7 +22,13 @@ public:
     str += " ";
     str += msg;
 
+#ifndef NDEBUG
+    fprintf(stderr, "%s",str.c_str());
+#endif // NDEBUG
+
     _syntaxErrors.push_back(str);
+
+    throw std::runtime_error(str);
   }
   bool hasError() { return _syntaxErrors.size() > 0; }
   std::vector<std::string> _syntaxErrors;
@@ -49,6 +55,10 @@ SPCtxNode SqlEngineParser::Build(std::string sql, std::string &errmsg)
   SqlExprErrorListener errorListener;
   parser.addErrorListener(&errorListener);
 
+  // TODO: should we have lexer error listener?
+  //lexer.removeErrorListeners();
+  //lexer.addErrorListener(&errorListener);
+
   SQLiteParser::ParseContext* tree = nullptr;
   try {
      tree = parser.parse();
@@ -58,6 +68,8 @@ SPCtxNode SqlEngineParser::Build(std::string sql, std::string &errmsg)
     }
   } catch (const std::exception &ex) {
     fprintf(stderr, "Exception:%s\n", ex.what());
+    errmsg = ex.what();
+    return SPCtxNode();
   }
   // look for parse error
 
@@ -100,5 +112,5 @@ namespace simplesql {
       // assume STDERR already has details about error
     }
     return 0;
-  }  
+  }
 }

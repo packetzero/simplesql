@@ -77,7 +77,7 @@ public:
     return x;
   }
 
-  virtual antlrcpp::Any visitError(SQLiteParser::ErrorContext *ctx) override { ASSERT(false); return visitChildren(ctx); }
+  //virtual antlrcpp::Any visitError(SQLiteParser::ErrorContext *ctx) override { ASSERT(false); return visitChildren(ctx); }
 
   virtual antlrcpp::Any visitSql_stmt_or_expr(SQLiteParser::Sql_stmt_or_exprContext *ctx) override {
     //DBG_CHILD_STR(ctx);

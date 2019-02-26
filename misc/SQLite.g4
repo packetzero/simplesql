@@ -542,10 +542,6 @@ SINGLE_LINE_COMMENT
  : '--' ~[\r\n]* -> channel(HIDDEN)
  ;
 
-MULTILINE_COMMENT
- : '/*' .*? ( '*/' | EOF ) -> channel(HIDDEN)
- ;
-
 SPACES
  : [ \u000B\t\r\n] -> channel(HIDDEN)
  ;
